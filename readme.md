@@ -13,6 +13,10 @@ Tasks:
 
 * Clone this repository. (https://github.com/BelindaMyteberi/awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-.git)
 
+* Open directory 
+```
+cd awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-/
+```
 * Switch to correct branch 
 ```
     git checkout video-input-first-attempt
@@ -21,10 +25,6 @@ Tasks:
 * Install requiremnets
 ```
     pip install -r requirements.txt
-```
-
-```
-    git checkout video-input-first-attempt
 ```
 * Initialise and update submodules
 
@@ -43,6 +43,8 @@ Tasks:
 			* Replacing `import llff.poses.colmap_read_model as read_model` with `from . import colmap_read_model as read_model`.
 
 * Rename `HashNeRF-pytorch` module to `hashnerf`
+
+* Glonal search `from llff_preprocessing import gen_poses` and replace with relative path `from .llff_preprocessing import gen_poses`
 
 * Upload example video or use existing awt.mp4
 
