@@ -44,7 +44,7 @@ cd awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-/
 
 * Rename `HashNeRF-pytorch` module to `hashnerf`
 
-* Glonal search `from llff_preprocessing import gen_poses` and replace with relative path `from .llff_preprocessing import gen_poses`
+* Global search `from llff_preprocessing import gen_poses` and replace with relative path `from .llff_preprocessing import gen_poses`
 
 * Upload example video or use existing awt.mp4
 
