@@ -48,7 +48,7 @@ cd awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-/
 
 * Upload example video or use existing awt.mp4
 
-* Run (with own sample video replace "awt.mp4" with your file name)
+* Run (with own sample video replace "awt.mp4" with your file name and create personal config file)
 
 ```
     python3 video_input_exploration.py --config awt.txt --input awt.mp4
