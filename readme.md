@@ -10,6 +10,7 @@ Tasks:
         Implementing a prototype to create an avatar from a single video input as well as detect and transfer facial expressions from the person to the avatar
 
 ### Installation
+The following steps are for use on a linux machine with Nvidia GPU. We assume an existing installation of Nvidia's CUDA Toolkit.
 
 * Clone this repository. (https://github.com/BelindaMyteberi/awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-.git)
 
@@ -17,11 +18,6 @@ Tasks:
 ```
 cd awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-/
 ```
-* Switch to correct branch 
-```
-    git checkout video-input-first-attempt
-```
-
 * Install requiremnets
 ```
     pip install -r requirements.txt
@@ -31,8 +27,11 @@ cd awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-/
 ```
     git submodule update --init
 ```
-
-* Install COLMAP. (https://colmap.github.io/install.html) for video input data preprocessing (spatial points + view direction)
+* Install the package imagemagick using your distributions package manager, e.g.
+```
+    sudo apt-get install imagemagick
+```
+* Install COLMAP. (https://colmap.github.io/install.html) for video input data preprocessing (spatial points + view direction). Make sure to install a version with CUDA support.
 
 	* From [nerf-pytorch](https://github.com/yenchenlin/nerf-pytorch), use `load_llff.py` to replace the example version included in this repo.
 		* In `load_llff_data()`, replace `sc = 1. if bd_factor is None else 1./(bds.min() * bd_factor)` with `sc = 1./(bds.max() - bds.min())`

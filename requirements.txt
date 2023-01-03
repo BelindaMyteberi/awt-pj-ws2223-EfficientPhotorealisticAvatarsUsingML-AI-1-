@@ -1,11 +1,12 @@
-torch==1.11.0
-torchvision>=0.9.1
+configargparse
 imageio
 imageio-ffmpeg
+kornia
 matplotlib
-configargparse
-tensorboard>=2.0
-tqdm
+numpy
 opencv-python
-ffmpeg
+Pillow
+torch
+tqdm
+
 
