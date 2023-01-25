@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/InsightFace" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/RobustVideoMatting" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/face-parsing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/face_normals" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/deps/video-head-tracker" vcs="Git" />
+  </component>
+</project>
