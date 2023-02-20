@@ -38,7 +38,7 @@ def upload_form():
 def render_form():
     if os.path.isfile('./static/awtApp/transforms.json'):
         return render_template('renderAvatar.html')
-    return render_template('errorNoPp.html', missingPP=True)
+    return render_template('errorNoPp.html', missingPP=rue)
 
 @app.route('/reenact')
 def reenact():
@@ -169,7 +169,7 @@ def render_avatar():
         "init_steps": init_steps,
         "img_log_freq": img_log_freq,
         "energy_log_freq": energy_log_freq,
-        "output_path": "./awtOutput",
+        "output_path": "./static/awtOutput",
         "save_period": 1,
         "device": device,
         "keyframes": keyframes,
@@ -182,9 +182,11 @@ def render_avatar():
     }
 
 
-"""     data = VideoDataset("./static/awtApp", 1.0)
+    data = VideoDataset("./static/awtApp", 1.0)
     tracker = Tracker(data, **args_dic)
-    tracker.optimize() """
+    tracker.optimize()
+    return render_template('upload.html')
+
 
 
 
