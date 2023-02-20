@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+* {
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+    color:#333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+input[type="file"] {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="file"]:hover {
+    border-color: #0070c9;
+    box-shadow: 0 0 10px #0070c9;
+}
+
+input[type="submit"] {
+    background-color: #0070c9;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #fff;
+    color: #0070c9;
+    box-shadow: 0 0 10px #0070c9;
+}
+
+.zip{
+    background-color: #0070c9;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; 
+
+}
+.zip:hover{
+    background-color: #fff;
+    color: #0070c9;
+    box-shadow: 0 0 10px #0070c9;
+}
+
+video {
+    border: 1px solid #ccc;
+    display: block;
+    border-radius: 5px;
+    width: 30%;
+    margin: 80px auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 50px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.navbar a {
+    color: #0070c9;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #333;
+}
+
+.loader
+{
+    margin-left: 27%;
+    display: none;
+    z-index: 1000;
+}
+.zipContainer{
+  margin: auto;
+  width: 50%;
+}
+
+</style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <!-- SVG logo here -->
+            </div>
+            <div class="nav-links">
+                <a href="/">Preprocess</a>
+                <a href="/render">Render Avatar</a>
+                <a href="/reenact">Reenact</a>
+            </div>
+        </nav>
+        {% if video %}
+            <div style="margin: 10px auto;">
+                <video autoplay="autoplay" controls="controls" preload="preload" width="100%">
+                    <source src="./static/awtOutput/optimized_avatar/lightning_logs/version_0/SceneReconstruction-version_0-train.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+            <div class="center">
+                <a class="zip" href="{{ url_for('.request_zip_avatar') }}">Download Data, Object and Video above</a>
+            </div>
+        {% endif %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
+        <script type='module' src="https://unpkg.com/three@0.126.0/examples/js/loaders/OBJLoader.js"></script>
+    </body>
+</html>

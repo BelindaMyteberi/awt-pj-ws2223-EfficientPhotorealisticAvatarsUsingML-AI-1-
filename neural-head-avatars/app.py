@@ -185,7 +185,8 @@ def render_avatar():
     data = VideoDataset("./static/awtApp", 1.0)
     tracker = Tracker(data, **args_dic)
     tracker.optimize()
-    return render_template('upload.html')
+    video = True
+    return render_template('renderAvatarOptput.html', video=video)
 
 
 
@@ -231,10 +232,24 @@ if __name__ == '__main__':
 @app.route('/download-zip')
 def request_zip():
     timestr = time.strftime("%Y%m%d-%H%M%S")
-    fileName = "my_data_dump_{}.zip".format(timestr)
+    fileName = "my_data_preprocd{}.zip".format(timestr)
     memory_file = BytesIO()
     with zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_DEFLATED) as zipf:
           for root, dirs, files in os.walk('static'):
+                    for file in files:
+                              zipf.write(os.path.join(root, file))
+    memory_file.seek(0)
+    return send_file(memory_file,
+                     download_name=fileName,
+                     as_attachment=True)
+
+@app.route('/download-zip-avatar')
+def request_zip_avatar():
+    timestr = time.strftime("%Y%m%d-%H%M%S")
+    fileName = "my_avatar{}.zip".format(timestr)
+    memory_file = BytesIO()
+    with zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_DEFLATED) as zipf:
+          for root, dirs, files in os.walk('static/awtOutput'):
                     for file in files:
                               zipf.write(os.path.join(root, file))
     memory_file.seek(0)
