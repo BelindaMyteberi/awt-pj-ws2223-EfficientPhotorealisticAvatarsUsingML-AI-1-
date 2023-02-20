@@ -36,7 +36,9 @@ def upload_form():
 
 @app.route('/render')
 def render_form():
-    return render_template('renderAvatar.html')
+    if os.path.isfile('./static/awtApp/transforms.json'):
+        return render_template('renderAvatar.html')
+    return render_template('errorNoPp.html', missingPP=True)
 
 @app.route('/reenact')
 def reenact():

@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <script>
-    function spinner() {
-        document.getElementsByClassName("loader")[0].style.display = "block";
-        document.getElementsByClassName("form")[0].style.display = "none";
-    }
-
-    </script>
         <style>
 * {
     box-sizing: border-box;
     font-family: 'Helvetica Neue', sans-serif;
-    color:#333;
+}
+
+a{
+    color: #0070c9;
 }
 
 ul {
@@ -79,19 +75,7 @@ input[type="submit"]:hover {
     transition: all 0.3s ease-in-out; 
 
 }
-.zip:hover{
-    background-color: #fff;
-    color: #0070c9;
-    box-shadow: 0 0 10px #0070c9;
-}
 
-video {
-    border: 1px solid #ccc;
-    display: block;
-    border-radius: 5px;
-    width: 30%;
-    margin: 80px auto;
-}
 
 .navbar {
     display: flex;
@@ -120,16 +104,6 @@ video {
     color: #333;
 }
 
-.loader
-{
-    margin-left: 27%;
-    display: none;
-    z-index: 1000;
-}
-.zipContainer{
-  margin: auto;
-  width: 50%;
-}
 
 </style>
     </head>
@@ -144,42 +118,16 @@ video {
                 <a href="/reenact">Reenact</a>
             </div>
         </nav>
-        <p>
-            {% with messages = get_flashed_messages() %}
-              {% if messages %}
-                <ul>
-                {% for message in messages %}
-                  <li>{{ message }}</li>
-                {% endfor %}
-                </ul>
-              {% endif %}
-            {% endwith %}
-        </p>
-          <div style="display: none" class="loader">
-            <img src="https://cdn.dribbble.com/users/1186261/screenshots/3718681/_______.gif" alt="Loading..." />
-          </div>
-
-        {% if filename %}
-            <div style="margin: 10px auto;">
-                <video autoplay="autoplay" controls="controls" preload="preload" width="50%">
-                    <source src={{ url_for('display_video', filename=filename) }} type="video/mp4"></source>
-                </video>
-            </div>
-            <div class="center">
-                <a class="zip" href="{{ url_for('.request_zip') }}">Download preprocessed Data</a>
-            </div>
-        {% endif %}
         <form class='form' method="post" action="/" enctype="multipart/form-data" style="margin-top: 20%">
             <dl>
-                <h1>Upload a video of yourself(.mp4)</h1>
-                <p>Important: Make sure to crop the video tightly around the head as in the paper. Otherwise the generated ground truth is not as accurate and the optimization later on uses only a small part of each frame</p>
-                <div class="zipContainer">
-                    <input type="file" name="file" autocomplete="off" required>
-                </div>
+                <img src="https://cdn-icons-png.flaticon.com/512/2711/2711678.png" alt="Warning sign" width="200" height="200" />
+                {% if missingPP %}
+                <h1>Please <a href="/">Preprocess</a> a video first before you can create an Avatar</h1>
+                {% endif %}
+<!--                 {% if missingRender %}
+                <h1>Please <a href="/render">Render an Avatar</a> first before you can give it facial expressions</h1>
+                {% endif %} -->
             </dl>
-            <p>
-                <input type="submit" value="Upload" onclick="spinner()">
-            </p>
         </form>
     </body>
 </html>
