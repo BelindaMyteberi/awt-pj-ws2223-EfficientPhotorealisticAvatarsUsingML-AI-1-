@@ -47,7 +47,7 @@ input[type="file"]:hover {
 }
 
 input[type="submit"] {
-    margin-top: 10%;
+    margin-top: 5%;
     background-color: #0070c9;
     color: #fff;
     padding: 10px 20px;
@@ -104,6 +104,7 @@ video {
     z-index: 1000;
 }
 form {
+  margin-top: 6%;
   background-color: #15172b;
   color: white;
   border-radius: 20px;
@@ -168,57 +169,57 @@ label {
           </div>
         <form action="" method="post" class="form">
             <div class="title">Welcome</div>
-            <div class="subtitle">Let's create your account!</div>
-              <label for="n_shape">n_shape:</label>
+            <div class="subtitle">Let's create your avatar!</div>
+              <label for="n_shape">Number of shapes:</label>
               <input type="number" id="n_shape" name="n_shape" value="300">
             </div>
             <div>
-              <label for="n_expr">n_expr</label>
+              <label for="n_expr">Number of exprssions</label>
               <input type="number" id="n_expr" name="n_expr" value="100">
             </div>
             <div>
-              <label for="n_tex">n_tex</label>
+              <label for="n_tex">Number of textures</label>
               <input type="number" id="n_tex" name="n_tex" value="100">
             </div>
             <div>
-                <label for="device">device</label>
+                <label for="device">Device</label>
                 <input type="text" id="device" name="device" value="cpu">
               </div>
               <div>
-                <label for="img_log_freq">img_log_freq</label>
+                <label for="img_log_freq">Image log-freq</label>
                 <input type="text" id="img_log_freq" name="img_log_freq" value="50">
               </div>
               <div>
-                <label for="energy_log_freq">energy_log_freq</label>
+                <label for="energy_log_freq">Energy log-freq</label>
                 <input type="text" id="energy_log_freq" name="energy_log_freq" value="5">
               </div>
               <div>
-                <label for="keyframes">keyframes</label>
+                <label for="keyframes">Keyframes for texture</label>
                 <input type="text" id="keyframes" name="keyframes" value="[0]">
               </div>
               <div>
             <div>
-              <label for="init_steps">init_steps</label>
+              <label for="init_steps">Initilazing steps</label>
               <input type="text" id="init_steps" name="init_steps" value="400">
             </div>
             <div>
-              <label for="steps_per_frame">steps_per_frame</label>
+              <label for="steps_per_frame">Steps per frame</label>
               <input type="text" id="steps_per_frame" name="steps_per_frame" value="5">
             </div>
             <div>
-              <label for="sub_steps">sub_steps</label>
+              <label for="sub_steps">Sub steps</label>
               <input type="text" id="sub_steps" name="sub_steps" value="5">
             </div>
             <div>
-              <label for="lr">lr</label>
+              <label for="lr">Learning Rate</label>
               <input type="text" id="lr" name="lr" value="0.005">
             </div>
             <div>
-              <label for="w_lmk">w_lmk</label>
+              <label for="w_lmk">Loss weights</label>
               <input type="text" id="w_lmk" name="w_lmk" value="5">
             </div>
             <div>
-                <label for="ignore_lower_neck">ignore_lower_neck</label>
+                <label for="ignore_lower_neck">Ignore lower neck</label>
                 <input type="checkbox" id="ignore_lower_neck" name="ignore_lower_neck" checked="checked">
               </div>
             <div class="submitButton">
