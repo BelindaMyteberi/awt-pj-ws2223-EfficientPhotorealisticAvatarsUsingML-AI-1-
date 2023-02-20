@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+    function spinner() {
+        document.getElementsByClassName("loader")[0].style.display = "block";
+        document.getElementsByClassName("form")[0].style.display = "none";
+    }
+
+    </script>
+        <style>
+* {
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+form {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+input[type="file"] {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="file"]:hover {
+    border-color: #0070c9;
+    box-shadow: 0 0 10px #0070c9;
+}
+
+input[type="submit"] {
+    margin-top: 10%;
+    background-color: #0070c9;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #fff;
+    color: #0070c9;
+    box-shadow: 0 0 10px #0070c9;
+}
+
+video {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    margin: 50px auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 50px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.navbar a {
+    color: #0070c9;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #333;
+}
+
+.loader
+{
+    margin-left: 27%;
+    display: none;
+    z-index: 1000;
+}
+form {
+  background-color: #15172b;
+  color: white;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 20px;
+  width: 320px;
+}
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  margin-bottom: 10%;
+  margin-bottom: 5%;
+}
+
+.imgContainer {
+    height: 50%;
+    width:50%;
+}
+
+img {
+    top:30px;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+
+
+</style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <!-- SVG logo here -->
+            </div>
+            <div class="nav-links">
+                <a href="/">Preprocess</a>
+                <a href="/render">Render Avatar</a>
+                <a href="/reenact">Reenact</a>
+            </div>
+        </nav>
+        <div class="imgContainer">
+            <img src="{{ url_for('static', filename='expression.png') }}" alt="Expression">
+        </div>
+    </body>
+</html>
