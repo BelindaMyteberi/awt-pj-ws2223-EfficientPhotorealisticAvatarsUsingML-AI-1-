@@ -158,3 +158,17 @@ neural-head-avatars/assets/insight-face-v3.pt
 /experiments
 /pretrained_models/
 tags
+neural-head-avatars/assets/face_normals/model.pth
+neural-head-avatars/assets/face_parsing/79999_iter.pth
+neural-head-avatars/assets/flame/FLAME_texture.npz
+neural-head-avatars/assets/flame/head_template_mesh.obj
+neural-head-avatars/assets/rvm/rvm_mobilenetv3.pth
+neural-head-avatars/deps/face_normals/crop.py
+neural-head-avatars/deps/face_normals/README.md
+neural-head-avatars/deps/face_normals/teaser.jpg
+neural-head-avatars/deps/face_normals/tester.py
+neural-head-avatars/deps/face_normals/data/cropped/0.jpg
+neural-head-avatars/deps/face_normals/data/original/0.jpg
+neural-head-avatars/deps/face_normals/resnet_unet/__init__.py
+neural-head-avatars/deps/face_normals/resnet_unet/resnet_unet_model.py
+neural-head-avatars/deps/face_normals/resnet_unet/resnet.py

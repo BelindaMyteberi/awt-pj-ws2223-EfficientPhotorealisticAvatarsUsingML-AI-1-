@@ -49,7 +49,7 @@ from RobustVideoMatting.model import MattingNetwork
 from nha.data.real import RealDataModule, id2frame, id2view
 
 # set paths to model weights
-PARSING_MODEL_PATH = "./assets/face_parsing/model.pth"
+PARSING_MODEL_PATH = "./assets/face_parsing/79999_iter.pth"
 NORMAL_MODEL_PATH = "./assets/face_normals/model.pth"
 SEG_MODEL_PATH = "./assets/rvm/rvm_mobilenetv3.pth"
 
