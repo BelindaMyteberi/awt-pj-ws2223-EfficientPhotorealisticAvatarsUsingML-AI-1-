@@ -38,11 +38,13 @@ def upload_form():
 def render_form():
     if os.path.isfile('./static/awtApp/transforms.json'):
         return render_template('renderAvatar.html')
-    return render_template('errorNoPp.html', missingPP=rue)
+    return render_template('errorNoPp.html', missingPP=True)
 
 @app.route('/reenact')
 def reenact():
-    return render_template('reenactAvatar.html')
+    if os.path.isfile('./static/awtOutput/optimized_avatar/lightning_logs/version_0/checkpoints/last.ckpt'):
+        return render_template('reenactAvatar.html')
+    return render_template('errorNoPp.html', missingPP=False, missingRender=True)
 
 @app.route('/reenact', methods=['POST'])
 def reenact_avatar():
