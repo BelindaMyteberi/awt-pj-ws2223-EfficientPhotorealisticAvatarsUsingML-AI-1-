@@ -8,9 +8,9 @@ setup(
     install_requires=[
         "ConfigArgParse",
         "numpy==1.21",
-        "torch@https://download.pytorch.org/whl/cu113/torch-1.10.2%2Bcu113-cp39-cp39-linux_x86_64.whl",
-        "torchvision@https://download.pytorch.org/whl/cu113/torchvision-0.11.3%2Bcu113-cp39-cp39-linux_x86_64.whl",
-        "pytorch3d@https://github.com/facebookresearch/pytorch3d",
+        # "torch@https://download.pytorch.org/whl/cu113/torch-1.10.2%2Bcu113-cp39-cp39-linux_x86_64.whl",
+        # "torchvision@https://download.pytorch.org/whl/cu113/torchvision-0.11.3%2Bcu113-cp39-cp39-linux_x86_64.whl",
+        # "pytorch3d@https://github.com/facebookresearch/pytorch3d",
         "matplotlib",
         "tensorboard",
         "scipy",
