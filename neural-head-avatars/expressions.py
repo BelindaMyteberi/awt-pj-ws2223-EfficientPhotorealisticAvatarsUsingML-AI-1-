@@ -6,8 +6,8 @@ from nha.util.general import dict_2_device
 import numpy as np
 import matplotlib.pyplot as plt
 
-ckpt = "ckpts_and_data/nha/last.ckpt"
-tracking_results="ckpts_and_data/tracking/tracked_flame_params.npz"
+tracking_results="static/awtOutput/tracking_0/tracked_flame_params.npz"
+ckpt = "static/awtOutput/optimized_avatar/lightning_logs/version_0/checkpoints/last.ckpt"
 
 avatar = NHAOptimizer.load_from_checkpoint(ckpt).eval().cpu()
 tr = np.load(tracking_results)
