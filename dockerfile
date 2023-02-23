@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 WORKDIR /neural-heads
 COPY setup.py ./
-COPY ./neural_heads_dynamic_avatar/neural-head-avatars ./
+COPY ./neural-head-avatars ./
 RUN apt-get update && apt-get install -y git wget software-properties-common
 RUN wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda-repo-debian11-11-7-local_11.7.0-515.43.04-1_amd64.deb
 RUN dpkg -i cuda-repo-debian11-11-7-local_11.7.0-515.43.04-1_amd64.deb
