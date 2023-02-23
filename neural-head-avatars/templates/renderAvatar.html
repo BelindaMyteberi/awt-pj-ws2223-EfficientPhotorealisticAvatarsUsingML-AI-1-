@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+    function spinner() {
+        document.getElementsByClassName("loader")[0].style.display = "block";
+        document.getElementsByClassName("form")[0].style.display = "none";
+    }
+
+    </script>
+        <style>
+* {
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+form {
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+input[type="file"] {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="file"]:hover {
+    border-color: #0070c9;
+    box-shadow: 0 0 10px #0070c9;
+}
+
+input[type="submit"] {
+    margin-top: 5%;
+    background-color: #0070c9;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #fff;
+    color: #0070c9;
+    box-shadow: 0 0 10px #0070c9;
+}
+
+video {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+    margin: 50px auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 50px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.navbar a {
+    color: #0070c9;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #333;
+}
+
+.loader
+{
+    margin-left: 27%;
+    display: none;
+    z-index: 1000;
+}
+form {
+  margin-top: 6%;
+  background-color: #15172b;
+  color: white;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 20px;
+  width: 320px;
+}
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+  margin-bottom: 10%;
+  margin-bottom: 5%;
+}
+
+label {
+    margin-top: 60%;
+}
+
+
+</style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <!-- SVG logo here -->
+            </div>
+            <div class="nav-links">
+                <a href="/">Preprocess</a>
+                <a href="/render">Render Avatar</a>
+                <a href="/reenact">Reenact</a>
+            </div>
+        </nav>
+        <div style="display: none" class="loader">
+            <p>Video is being processed...</p>
+            <img src="https://cdn.dribbble.com/users/1186261/screenshots/3718681/_______.gif" alt="Loading..." />
+          </div>
+        <form action="" method="post" class="form">
+            <div class="title">Welcome</div>
+            <div class="subtitle">Let's create your avatar!</div>
+              <label for="n_shape">Number of shapes:</label>
+              <input type="number" id="n_shape" name="n_shape" value="300">
+            </div>
+            <div>
+              <label for="n_expr">Number of exprssions</label>
+              <input type="number" id="n_expr" name="n_expr" value="100">
+            </div>
+            <div>
+              <label for="n_tex">Number of textures</label>
+              <input type="number" id="n_tex" name="n_tex" value="100">
+            </div>
+            <div>
+                <label for="device">Device</label>
+                <input type="text" id="device" name="device" value="cpu">
+              </div>
+              <div>
+                <label for="img_log_freq">Image log-freq</label>
+                <input type="text" id="img_log_freq" name="img_log_freq" value="50">
+              </div>
+              <div>
+                <label for="energy_log_freq">Energy log-freq</label>
+                <input type="text" id="energy_log_freq" name="energy_log_freq" value="5">
+              </div>
+              <div>
+                <label for="keyframes">Keyframes for texture</label>
+                <input type="text" id="keyframes" name="keyframes" value="[0]">
+              </div>
+              <div>
+            <div>
+              <label for="init_steps">Initilazing steps</label>
+              <input type="text" id="init_steps" name="init_steps" value="400">
+            </div>
+            <div>
+              <label for="steps_per_frame">Steps per frame</label>
+              <input type="text" id="steps_per_frame" name="steps_per_frame" value="5">
+            </div>
+            <div>
+              <label for="sub_steps">Sub steps</label>
+              <input type="text" id="sub_steps" name="sub_steps" value="5">
+            </div>
+            <div>
+              <label for="lr">Learning Rate</label>
+              <input type="text" id="lr" name="lr" value="0.005">
+            </div>
+            <div>
+              <label for="w_lmk">Loss weights</label>
+              <input type="text" id="w_lmk" name="w_lmk" value="5">
+            </div>
+            <div>
+                <label for="ignore_lower_neck">Ignore lower neck</label>
+                <input type="checkbox" id="ignore_lower_neck" name="ignore_lower_neck" checked="checked">
+              </div>
+            <div class="submitButton">
+              <input type="submit" value="Submit" onclick="spinner()">
+            </div>
+          </form>
+    </body>
+</html>
