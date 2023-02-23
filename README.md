@@ -1,7 +1,9 @@
 # Dynamic 4D-head avatar <br><sub>based on the following paper([Project Page](https://philgras.github.io/neural_head_avatars/neural_head_avatars.html))</sub>
 
 
-Abstract: TODO
+Abstract: 
+Within this project, we created prototype that constructs 3D avatars of a person and applies gestures to it. The prototype was created from a single video input. Through our work we aimed to use neural networks, which ensures the detection and the transfer of facial expressions from the person to a 3D avatar. During this project we explored two different approach to create a dynamic 3D avatar. One of them being NERF, making use of a neural radiance field to create an implicit 3D scene representation and Neural-Head-Avatars, based on flame mesh technology. Our final solution was based on neural-head-avatars with an integrated Application on top for an optimised user experience.
+
 <br><br>
 
 
@@ -118,6 +120,4 @@ The code is available for non-commercial scientific research purposes under the 
 Parts of our code are heavily inspired by https://github.com/HavenFeng/photometric_optimization.git so please also consider citing their work as well as the underlying FLAME head model for which an up-to-date bibtex can be found [here](https://flame.is.tue.mpg.de/).
 
 
-## Acknowledgements
 
-This project has received funding from the DFG in the joint German-Japan-France grant agreement (RO 4804/3-1) and the ERC Starting Grant Scan2CAD (804724). We also thank the Center for Information Services and High Performance Computing (ZIH) at TU Dresden for generous allocations of computer time.
