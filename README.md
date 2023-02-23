@@ -33,91 +33,9 @@ For pre-processing your own videos:
      tells you.)
 <br>
 
-## Run the FLASK-app
-- ```cd neural-head-avatars```
-- ```pip install -U Flask```
-- ```FLASK_ENV=development FLASK_APP=app.py flask run```
+## Build application
+- ```docker build -t awtimage  .```
+## Run application
+- ```docker run awtimage```
 This shoudl run in browser on port ```http://127.0.0.1:5000```
-
-
-## Optimizing an Avatar Against a Monocular RGB Video
-Please follow these steps to optimize a new avatar from scratch against a monocular .mp4 video. Make sure that only one subject is visble in every frame and that the head is turned in both directions up to profile views in order to provide enough information for the avatar optimization.
-We provide preprocessed videos, FLAME head trackings and optimized avatar checkpoints for
-two of our subjects from the paper [here](https://edmond.mpdl.mpg.de/api/access/datafile/182303).
-
-1. Video Preprocessing
-   - If you would like to use your own video, make sure you installed the required dependencies from above.
-   - Run ```python python_scripts/video2dataset.py --video PATH_TO_VIDEO --out_path PATH_TO_OUTPUT_DIR```
-    - Important: Make sure to crop the video tightly around the head as in the paper. Otherwise the generated ground truth is not as accurate and the optimization later on uses only a small part of each frame.
-    <br>
-    This script will automatically extract all necessary data including segmentations, normal maps and so on. While not beeing strictly necessary, we recommend using square videos captured at 25 fps at a resolution of 512x512 px.
-
-
-2. Head Tracking
-
-    - Adapt the config file `configs/tracking.ini` and make sure to change the following values according to your needs.
-      Note you can also set them on the command line by preceding each parameter name with `--`.
-
-          data_path ... Path to the preprocessed dataset (e.g. data/own_dataset)
-
-          output_path ... Path to output all results including tracked head model parameters, visualizations, logs, ... (e.g. data/own/dataset/tracking_results)
-
-          keyframes ... List of frame indices in the sequence dataset to initialize the FLAME texture and shape parameters against. Select frames that show the head from different angles and with approximately neutral expression.
-
-    - Run ```python deps/video-head-tracker/vht/optimize_tracking.py --config configs/tracking.ini```
-    - Note: If you point Tensorboard to `output_path`, you can follow the optimization.
-
-    <br>
-
-3. Avatar Optimization
-
-   - Adapt the split config file at ```configs/split.json``` to specify which frames to use for training and which for validation
-
-   - Adapt the config file at ```configs/optimize_avatar.ini``` according to your needs. Make sure to change the parameters:
-
-         default_root_dir ... Path to directory to store the results in (e.g. experiments/optimized_avatars)
-
-         data_path ... Path to dataset (e.g. data/own_dataset)
-
-         split_config ... Path to split config (e.g. configs/split.json)
-
-         tracking_results_path``` ... Path to the file containing the tracked flame parameters (e.g. data/own_dataset/tracking_results/tracking_1/tracked_params.npy)
-
-   - If you desire to make any changes to the other parameters please note two details:
-
-      * The parameters ```train_batch_size, validation_batch_size, *_lr``` and most of the loss weights are defined as tuples of three values. Each value corresponds to one stage of optimization, namely, geometry optimization, texture optimization, and joint optimization respectively.
-
-      * The parameters ```w_semantic_hair, w_silh, w_lap``` change smoothly during training and are specified through lists of tuples with two entries. The first tuple entry specifies the weight value, the second specifies the epoch. Inbetween the so-defined fixpoints, the values are interpolated.
-
-   - Run ```python python_scripts/optimize_nha.py --config configs/optimize_avatar.ini```
-
-   - After the optimization is finished, the trained model is stored in the directory specified via ```default_root_dir``` alongside with qualitative and quantitative evaluations.
-
-   - Note the GPU requirements in the paper. If you have less resources available, try reducing the batch size, image resolution and capacities of the MLPs.
-    - Note: If you point Tensorboard to `default_root_dir`, you can follow the optimization.
-<br>
-
-
-## License
-The code is available for non-commercial scientific research purposes under the [CC BY-NC 3.0 license](https://creativecommons.org/licenses/by-nc/3.0/legalcode). Please note that the files [flame.py](./nha/models/flame.py) and [lbs.py](./nha/util/lbs.py) are heavily inspired by https://github.com/HavenFeng/photometric_optimization and are property of the Max-Planck-Gesellschaft zur Förderung der Wissenschaften e.V. The download, use, and distribution of this code is subject to this [license](https://github.com/vchoutas/smplx/blob/master/LICENSE). The files that can be found in the [./assets](./assets) directory, are adapted from the [FLAME head model](https://flame.is.tue.mpg.de) for which the license can be found [here](https://flame.is.tue.mpg.de/modellicense.html).
-
-
-## Citation
-
-**If you find our work useful, please include the following citation:**
-
-
-```
-@article{grassal2021neural,
-  title={Neural Head Avatars from Monocular RGB Videos},
-  author={Grassal, Philip-William and Prinzler, Malte and Leistner, Titus and Rother, Carsten and Nie{\ss}ner, Matthias and Thies, Justus},
-  journal={arXiv preprint arXiv:2112.01554},
-  year={2021}
-}
-
-```
-
-Parts of our code are heavily inspired by https://github.com/HavenFeng/photometric_optimization.git so please also consider citing their work as well as the underlying FLAME head model for which an up-to-date bibtex can be found [here](https://flame.is.tue.mpg.de/).
-
-
 
