@@ -15,4 +15,4 @@ RUN pip install "git+https://github.com/facebookresearch/pytorch3d.git@stable"
 RUN pip install -e .
 RUN pip install Flask
 RUN pip install -e deps/video-head-tracker
- CMD ["flask", "--app", "app.py", "run"]
+CMD ["flask", "--app", "app.py", "run", "--host", "0.0.0.0"]
