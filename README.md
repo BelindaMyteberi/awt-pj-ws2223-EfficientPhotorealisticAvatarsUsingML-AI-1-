@@ -36,6 +36,6 @@ For pre-processing your own videos:
 ## Build application
 - ```docker build -t awtimage  .```
 ## Run application
-- ```docker run awtimage```
+- ```docker run --gpus all -p 5000:5000 awtimage```
 This shoudl run in browser on port ```http://127.0.0.1:5000```
 
