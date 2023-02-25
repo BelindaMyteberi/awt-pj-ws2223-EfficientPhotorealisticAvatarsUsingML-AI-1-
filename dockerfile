@@ -11,5 +11,5 @@ RUN pip install -e .
 RUN pip install Flask
 RUN pip install -e deps/video-head-tracker
 RUN pip install pytorch-lightning==1.9.3
-RUN export PATH=/usr/bin:$PATH
+ENV PATH=/usr/bin:$PATH
 CMD ["flask", "--app", "app.py", "run", "--host", "0.0.0.0"]
