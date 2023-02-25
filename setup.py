@@ -18,7 +18,7 @@ setup(
         "chumpy",
         "face-alignment",
         "face-detection-tflite",
-        "pytorch-lightning==1.9.3",
+        "pytorch-lightning==1.2.4",
         "lpips",
         "pytorch_msssim",
         "cpbd@git+https://github.com/wl2776/python-cpbd.git",

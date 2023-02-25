@@ -10,4 +10,5 @@ RUN pip install tensorflow==2.7.4
 RUN pip install -e .
 RUN pip install Flask
 RUN pip install -e deps/video-head-tracker
+RUN pip install pytorch-lightning==1.9.3
 CMD ["flask", "--app", "app.py", "run", "--host", "0.0.0.0"]
