@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y git
 RUN conda install -y -c fvcore -c iopath -c conda-forge fvcore iopath
 RUN conda install -y pytorch3d=0.7.2 -c pytorch3d
 RUN python -m pip install --upgrade pip
+RUN pip install tensorflow==2.7.4
 RUN pip install -e .
 RUN pip install Flask
 RUN pip install -e deps/video-head-tracker
