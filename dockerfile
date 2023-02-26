@@ -5,6 +5,7 @@ RUN conda install -y -c fvcore -c iopath -c conda-forge fvcore iopath
 RUN conda install -y pytorch3d=0.7.2 -c pytorch3d
 RUN python -m pip install --upgrade pip
 RUN pip install tensorflow==2.7.4
+COPY setup.py ./
 RUN pip install -e .
 RUN pip install Flask
 RUN if ! test -e deps; then mkdir -p deps; \
@@ -20,6 +21,5 @@ RUN pip install -e deps/video-head-tracker
 RUN pip install pytorch-lightning==1.9.3
 ENV PATH=/usr/bin:$PATH
 RUN mkdir -p static
-COPY setup.py ./
 COPY ./neural-head-avatars ./
 CMD ["flask", "--app", "app.py", "run", "--host", "0.0.0.0"]
