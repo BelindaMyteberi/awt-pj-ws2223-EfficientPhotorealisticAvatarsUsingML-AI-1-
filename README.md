@@ -39,17 +39,16 @@ For pre-processing your own videos:
 - ```docker run --gpus all -p 5000:5000 awtimage```
 This shoudl run in browser on port ```http://127.0.0.1:5000```
 
-##Acknowledgements
+## Acknowledgements
 
-This project was heavily inspired by the work of HavenFeng [1], whose code for photometric optimization can be found at https://github.com/HavenFeng/photometric_optimization. The files flame.py and lbs.py in this project are property of the Max-Planck-Gesellschaft zur Förderung der Wissenschaften e.V. and are adapted from the work of HavenFeng [1]. Please note that the use and distribution of this code is subject to the CC BY-NC 3.0 license. 
+This work is heavily inspired by the [Neural Head Avatars from Monocular RGB Videos](https://github.com/philgras/neural-head-avatars) repository by Philip-William Grassal, Malte Prinzler, Titus Leistner, Carsten Rother, Matthias Nie{\ss}ner, and Justus Thies. Please note that the use and distribution of this code is subject to the CC BY-NC 3.0 license. 
+Another project that inspired us is the work of HavenFeng [2], whose code for photometric optimization can be found at https://github.com/HavenFeng/photometric_optimization. The files flame.py and lbs.py in this project are property of the Max-Planck-Gesellschaft zur Förderung der Wissenschaften e.V. and are adapted from the work of HavenFeng [2].
+In addition, the FLAME head model [4] was used in this project. The files in the ./assets directory are adapted from the FLAME head model, and the license for the FLAME head model can be found at [4].
 
-In addition, the FLAME head model [2] was used in this project. The files in the ./assets directory are adapted from the FLAME head model, and the license for the FLAME head model can be found at [3].
-
-[1] HavenFeng. Photometric optimization. https://github.com/HavenFeng/photometric_optimization.
-
-[2] Li, Tianye, Timo Bolkart, Michael J. Black, Hao Li, and Javier Romero. "Learning a model of facial shape and expression from 4D scans." ACM Transactions on Graphics (TOG) 36, no. 6 (2017): 194.
-
-[3] The FLAME model. http://flame.is.tue.mpg.de/.
+[1] Philip-William Grassal, Malte Prinzler, Titus Leistner, Carsten Rother, Matthias Nie{\ss}ner, and Justus Thies. Neural Head Avatars from Monocular RGB Videos https://github.com/philgras/neural-head-avatars 
+[2] HavenFeng. Photometric optimization. https://github.com/HavenFeng/photometric_optimization.
+[3] Li, Tianye, Timo Bolkart, Michael J. Black, Hao Li, and Javier Romero. "Learning a model of facial shape and expression from 4D scans." ACM Transactions on Graphics (TOG) 36, no. 6 (2017): 194.
+[4] The FLAME model. http://flame.is.tue.mpg.de/.
 
 
 # LICENSE
