@@ -52,6 +52,9 @@ In addition, the FLAME head model [2] was used in this project. The files in the
 [3] The FLAME model. http://flame.is.tue.mpg.de/.
 
 
-If you find our work useful, please consider citing:
+# LICENSE
+This code is released under the MIT License. See the LICENSE file for more information: https://github.com/BelindaMyteberi/awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-/blob/main/License
+
+
 
 
