@@ -9,6 +9,15 @@ RUN python -m pip install --upgrade pip
 RUN pip install tensorflow==2.7.4
 RUN pip install -e .
 RUN pip install Flask
+RUN if [! test -e deps]; then mkdir deps; \
+    git clone https://github.com/deepinsight/insightface.git deps/InsightFace; \
+    git clone https://github.com/PeterL1n/RobustVideoMatting.git deps/RobustVideoMatting; \
+    git clone https://github.com/boukhayma/face_normals.git deps/face_normals; \
+    git clone https://github.com/zllrunning/face-parsing.PyTorch.git deps/face_parsing; \
+    git clone https://github.com/philgras/video-head-tracker.git deps/video-head-tracker; \
+    fi
+RUN rm deps/video-head-tracker/setup.py
+RUN cp setup_vht.py deps/video-head-tracker/setup.py
 RUN pip install -e deps/video-head-tracker
 RUN pip install pytorch-lightning==1.9.3
 ENV PATH=/usr/bin:$PATH

@@ -3,7 +3,6 @@ import zipfile
 import time
 import sys
 import ast
-import configparser
 import numpy as np
 import torch
 from io import BytesIO
@@ -13,7 +12,9 @@ from python_scripts.video_to_dataset import Video2DatasetConverter
 sys.path.append("deps/video-head-tracker/")
 from vht.model.tracking import FlameTracker as Tracker
 from vht.data.video import VideoDataset
-from vht.util.log import get_logger
+from nha.optimization.train_pl_module import train_pl_module
+from nha.data.real import RealDataModule
+from nha.models.nha_optimizer import NHAOptimizer
 sys.path.remove("deps/video-head-tracker/")
 
 
@@ -187,6 +188,8 @@ def render_avatar():
     data = VideoDataset("./static/awtApp", 1.0)
     tracker = Tracker(data, **args_dic)
     tracker.optimize()
+    nha_args = ["--config", "configs/optimize_avatar.ini"]
+    train_pl_module(NHAOptimizer, RealDataModule, nha_args)
     video = True
     return render_template('renderAvatarOptput.html', video=video)
 
