@@ -1,3 +1,0 @@
-    Paper: https://dl.acm.org/doi/abs/10.1145/2766974 [Add to Citavi project by DOI]
-    Paper: https://openaccess.thecvf.com/content/CVPR2021/html/Gafni_Dynamic_Neural_Radiance_Fields_for_Monocular_4D_Facial_Avatar_Reconstruction_CVPR_2021_paper.html
-    NeRF: https://www.matthewtancik.com/nerf
