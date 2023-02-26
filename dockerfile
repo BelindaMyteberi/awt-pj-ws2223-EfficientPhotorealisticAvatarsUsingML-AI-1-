@@ -9,7 +9,7 @@ RUN python -m pip install --upgrade pip
 RUN pip install tensorflow==2.7.4
 RUN pip install -e .
 RUN pip install Flask
-RUN if [! test -e deps]; then mkdir deps; \
+RUN if ! test -e deps; then mkdir -p deps; \
     git clone https://github.com/deepinsight/insightface.git deps/InsightFace; \
     git clone https://github.com/PeterL1n/RobustVideoMatting.git deps/RobustVideoMatting; \
     git clone https://github.com/boukhayma/face_normals.git deps/face_normals; \
