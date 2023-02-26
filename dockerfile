@@ -21,4 +21,5 @@ RUN cp setup_vht.py deps/video-head-tracker/setup.py
 RUN pip install -e deps/video-head-tracker
 RUN pip install pytorch-lightning==1.9.3
 ENV PATH=/usr/bin:$PATH
+RUN mkdir -p static
 CMD ["flask", "--app", "app.py", "run", "--host", "0.0.0.0"]
