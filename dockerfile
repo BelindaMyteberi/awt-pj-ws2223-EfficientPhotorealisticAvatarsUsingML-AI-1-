@@ -16,10 +16,10 @@ RUN if ! test -e deps; then mkdir -p deps; \
     git clone https://github.com/philgras/video-head-tracker.git deps/video-head-tracker; \
     fi
 RUN rm deps/video-head-tracker/setup.py
-RUN cp setup_vht.py deps/video-head-tracker/setup.py
-RUN pip install -e deps/video-head-tracker
 RUN pip install pytorch-lightning==1.9.3
 ENV PATH=/usr/bin:$PATH
 RUN mkdir -p static
 COPY ./neural-head-avatars ./
+RUN cp setup_vht.py deps/video-head-tracker/setup.py
+RUN pip install -e deps/video-head-tracker
 CMD ["flask", "--app", "app.py", "run", "--host", "0.0.0.0"]
