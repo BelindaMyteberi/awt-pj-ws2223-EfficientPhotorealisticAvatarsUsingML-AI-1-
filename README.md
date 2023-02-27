@@ -34,7 +34,7 @@ For pre-processing your own videos:
 ## Run application
 - Use the paramter ```--ipc=host``` or ```--shm-size="desired amount of memory"``` depending on your hardware.
 - e.g. ```docker run --gpus all --ipc=host -p 5000:5000 awtimage```
-This should run in your browser at ```localhost:5000```
+- This should run in your browser at ```localhost:5000```
 
 ## Acknowledgements
 
