@@ -1788,7 +1788,7 @@ class NHAOptimizer(pl.LightningModule):
 
         return loss
 
-    def training_step(self, batch, batch_idx, optimizer_idx, *args, **kwargs):
+    def training_step(self, batch, batch_idx):
         self.is_train = True
         self.fit_residuals = False
         self.prepare_batch(batch)

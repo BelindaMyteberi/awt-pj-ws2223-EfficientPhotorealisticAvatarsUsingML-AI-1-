@@ -4,7 +4,7 @@ setup(
     name="vht",
     version="0.1.0",
     packages=find_packages(),
-    python_requires=">=3.9",
+    python_requires=">=3.8",
     install_requires=[
         "ConfigArgParse",
         # "torch@https://download.pytorch.org/whl/cu113/torch-1.10.2%2Bcu113-cp39-cp39-linux_x86_64.whl",

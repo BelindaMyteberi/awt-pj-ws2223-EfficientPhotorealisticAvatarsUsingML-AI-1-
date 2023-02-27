@@ -86,7 +86,7 @@ def train_pl_module(optimizer_module, data_module, args=None):
 
             # training
             trainer.fit(model,
-                        train_dataloader=data.train_dataloader(batch_size=data._train_batch[i]),
+                        train_dataloaders=data.train_dataloader(batch_size=data._train_batch[i]),
                         val_dataloaders=data.val_dataloader(batch_size=data._val_batch[i]))
 
             ckpt_path = Path(trainer.log_dir) / "checkpoints" / (stage + "_optim.ckpt")

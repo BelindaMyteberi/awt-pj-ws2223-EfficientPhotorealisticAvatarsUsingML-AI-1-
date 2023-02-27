@@ -1,10 +1,9 @@
-FROM pytorch/pytorch:1.13.0-cuda11.6-cudnn8-runtime
+FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
 WORKDIR /neural-heads
 RUN apt-get update && apt-get install -y git ffmpeg libsm6 libxext6
 RUN conda install -y -c fvcore -c iopath -c conda-forge fvcore iopath
-RUN conda install -y pytorch3d=0.7.2 -c pytorch3d
+RUN conda install -y pytorch3d=0.7.0 -c pytorch3d
 RUN python -m pip install --upgrade pip
-RUN pip install tensorflow==2.7.4
 COPY setup.py ./
 RUN pip install -e .
 RUN pip install Flask
