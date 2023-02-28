@@ -36,7 +36,10 @@ by looking for the ms1mv3_arcface_r18_fp run. To ease the search, this is the On
 - e.g. ```docker run --gpus all --ipc=host -p 5000:5000 awtimage```
 - This should run in your browser at ```localhost:5000```
 
-## Acknowledgements
+# LICENSE
+This code is released under the MIT License. See the LICENSE file for more information: https://github.com/BelindaMyteberi/awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-/blob/main/License
+
+## References
 
 This work is heavily inspired by the [Neural Head Avatars from Monocular RGB Videos](https://github.com/philgras/neural-head-avatars) repository by Philip-William Grassal, Malte Prinzler, Titus Leistner, Carsten Rother, Matthias Nie{\ss}ner, and Justus Thies. Please note that the use and distribution of neural head code is subject to the CC BY-NC 3.0 license. 
 Another project that inspired us is the work of HavenFeng [2], whose code for photometric optimization can be found at https://github.com/HavenFeng/photometric_optimization. The files flame.py and lbs.py in this project are property of the Max-Planck-Gesellschaft zur Förderung der Wissenschaften e.V. and are adapted from the work of HavenFeng [2].
@@ -48,8 +51,7 @@ In addition, the FLAME head model [4] was used in this project. The files in the
 - [4] The FLAME model. http://flame.is.tue.mpg.de/.
 
 
-# LICENSE
-This code is released under the MIT License. See the LICENSE file for more information: https://github.com/BelindaMyteberi/awt-pj-ws2223-EfficientPhotorealisticAvatarsUsingML-AI-1-/blob/main/License
+
 
 
 
