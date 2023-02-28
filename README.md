@@ -30,6 +30,7 @@ by looking for the ms1mv3_arcface_r18_fp run. To ease the search, this is the On
 <br>
 
 ## Build application
+We recommend the use of NVIDIA GPU to get quick and good performance. 
 - ```docker build -t awtimage  .```
 ## Run application
 - Use the paramter ```--ipc=host``` or ```--shm-size="desired amount of memory"``` depending on your hardware.
